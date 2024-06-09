@@ -1,31 +1,77 @@
-body {
+html, body {
+    height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: "Open Sans", sans-serif;
     color: #333;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensure it is in the background */
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 1em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; /* Ensure it is above the canvas */
+    position: relative; /* Make sure it's positioned above the canvas */
 }
 
-header h1 {
-    margin: 0;
-}
-
-header p {
-    margin: 0.5em 0 0;
+header h1, header p {
+    margin: 0.5em 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.25em 0.5em;
+    border: 3px solid black; /* Different border color for header */
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    background: #ffffff; /* Light green background for header */
 }
 
 main {
+    flex: 1;
     padding: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Ensure it is above the canvas */
+    position: relative; /* Make sure it's positioned above the canvas */
 }
 
 h2 {
-    color: #4CAF50;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border: 3px solid #000000; /* Different border color for h2 */
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: default; /* Make it clear it's not clickable */
+    background: #ffffff; /* Light grey background for h2 */
 }
 
 ul {
@@ -38,8 +84,10 @@ li {
 }
 
 a {
-    color: #4CAF50;
+    color: rgb(0, 0, 0);
     text-decoration: none;
+    font-size: 1em;
+    letter-spacing: 1px;
 }
 
 a:hover {
@@ -48,10 +96,41 @@ a:hover {
 
 footer {
     text-align: center;
-    padding: 1em 0;
-    background-color: #333;
-    color: white;
-    position: fixed;
+    padding: 0.5em 0;
+    color: rgb(0, 0, 0);
     width: 100%;
+    position: fixed;
     bottom: 0;
+    background: rgba(255, 255, 255, 0);
+    z-index: 2; /* Ensure it is above the canvas */
+}
+
+button {
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    margin-bottom: 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    background: rgb(254, 253, 235); /* Add background to ensure particles are obstructed */
+}
+
+button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+button.project-button {
+    display: block;
+    margin: 0.5em 0;
+    width: 200px;
 }
