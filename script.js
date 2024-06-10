@@ -19,7 +19,7 @@ class Particle {
         this.x += this.speedX;
         this.y += this.speedY;
 
-        if (this.size > 0.05) this.size -= 0.01; // Slower size reduction
+        if (this.size > 0.05) this.size -= 0.01;
     }
 
     draw() {
@@ -47,7 +47,7 @@ function handleParticles() {
             const dx = particlesArray[i].x - particlesArray[j].x;
             const dy = particlesArray[i].y - particlesArray[j].y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            if (distance < 100) { // Increased distance threshold
+            if (distance < 100) { 
                 ctx.beginPath();
                 ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
                 ctx.lineWidth = 1;
@@ -64,7 +64,6 @@ function handleParticles() {
         }
     }
 
-    // Ensure there are always enough particles
     while (particlesArray.length < numberOfParticles) {
         particlesArray.push(new Particle());
     }
