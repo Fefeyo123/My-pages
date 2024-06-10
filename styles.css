@@ -125,6 +125,26 @@ button:active {
     left: 5px;
 }
 
+button:hover {
+    animation: slightPress 0.1s;
+
+}
+
+@keyframes slightPress {
+    0% {
+        transform: translate(0, 0);
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    }
+    50% {
+        transform: translate(2px, 2px);
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px;
+    }
+    100% {
+        transform: translate(0, 0);
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    }
+}
+
 button.project-button {
     display: block;
     margin: 0.5em 0;
